@@ -1,0 +1,19 @@
+{
+  "name": "nodebasics",
+  "version": "1.0.0",
+  "description": "Zenva rest_API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cz8rT/nodeBasics.git"
+  },
+  "author": "Adam Welnicki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cz8rT/nodeBasics/issues"
+  },
+  "homepage": "https://github.com/Cz8rT/nodeBasics#readme"
+}
