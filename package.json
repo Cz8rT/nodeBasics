@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cz8rT/nodeBasics/issues"
   },
-  "homepage": "https://github.com/Cz8rT/nodeBasics#readme"
+  "homepage": "https://github.com/Cz8rT/nodeBasics#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
