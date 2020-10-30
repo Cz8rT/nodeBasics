@@ -1,6 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+
+// update express settings
+app.use(bodyParser.urlencoded({extended: false})); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()) // parse application/json
 
 app.get("/", (request, response) => {
     console.log("Get... in '/'");
@@ -13,8 +18,8 @@ app.get("/status", (request, response) => {
 });
 
 app.post("/rejestracja", (request, response) => {
-    console.log(request.body);
-    if(!request.body) {
+    console.log(request.body.test);
+    if(!request.body.test) {
         response.status(400).json({message: "invalid body", status: "400"})
     } else {
         response.status(200).json({ message: "ok", status: 200});
@@ -65,7 +70,14 @@ app.post("/forgot-password", (request, response) => {
 
 app.post("/reset-password", (request, response) => {
     console.log("Post... in '/reset-password'");
-    response.status(200).json({ message: "ok", status: 200});
+    if(!request.body || !request.body.email) {
+        response.status(400).json({message: "invalid body", status: "400"})
+    } else {
+        const { email } = request.body;
+        response.status(200).json({ 
+            message: `Password reset requested for email: ${email}`, status: 200
+        });
+    }
 });
 
 // catch all other routes
