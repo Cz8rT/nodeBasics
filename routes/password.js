@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.post("/forgot-password", (request, response) => {
-    console.log("POST... in '/forgot-password'");
+    console.log("POST in '/forgot-password'");
     if(!request.body || !request.body.email) {
         response.status(400).json({message: "invalid body", status: "400"})
     } else {
@@ -14,7 +14,7 @@ router.post("/forgot-password", (request, response) => {
 });
 
 router.post("/reset-password", (request, response) => {
-    console.log("POST... in '/reset-password'");
+    console.log("POST in '/reset-password'");
     if(!request.body || !request.body.email) {
         response.status(400).json({message: "invalid body", status: "400"})
     } else {
